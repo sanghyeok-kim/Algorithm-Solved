@@ -26,10 +26,6 @@ struct Stack {
     func isEmpty() -> Bool {
         return self.elements.isEmpty
     }
-
-    func countElement() -> Int {
-        return self.elements.count
-    }
 }
 
 func pushToys(to machine: inout [Stack], by board: [[Int]]) {
@@ -44,7 +40,7 @@ func pickToys(from machine: inout [Stack], to basket: inout Stack, by moves: [In
     var poppedToyCount = 0
 
     for item in moves {
-        guard let poppedToy = machine[item].pop() else { continue }
+        guard let poppedToy = machine[item - 1].pop() else { continue }
         
         if poppedToy == basket.peek() { basket.pop(); poppedToyCount += 2 }
         else { basket.push(element: poppedToy) }
