@@ -13,7 +13,6 @@ for i in 0..<input {
     for _ in 0..<(input - i - 1) {
         print(" ", terminator: "")
     }
-
     for _ in 0..<(i * 2 + 1) {
         print("*", terminator: "")
     }
@@ -24,7 +23,6 @@ for i in 1..<input {
     for _ in 0..<i {
         print(" ", terminator: "")
     }
-    
     for _ in 0..<((input - i) * 2 - 1) {
         print("*", terminator: "")
     }
