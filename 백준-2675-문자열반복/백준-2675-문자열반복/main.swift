@@ -12,9 +12,8 @@ let inputCount = Int(readLine()!)!
 for i in 0..<inputCount {
     let iterationCount = readLine()!.map{ Int(String($0)) }
     let str = String(readLine()!)
-    
     var temp: String
-    
+
     for j in 0..<str.count {
         temp += str
     }
