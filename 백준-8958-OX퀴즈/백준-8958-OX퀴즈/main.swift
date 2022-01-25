@@ -7,23 +7,15 @@
 
 import Foundation
 
-let row = Int(readLine()!)!
-var scores = [Int]()
+let count = Int(readLine()!)!
 
-for i in 0..<row {
-    
-    let col = readLine()!.split(separator: "X").reduce(0) {
-        
-    }
-    
-    
-    
-    
-    
-    
-    
-    
+func calculateArithmetic(of n: Int) -> Int {
+    return n * (2 + ( n - 1 ) * 1) / 2
 }
 
-print(col)
+for _ in 0..<count {
+    print(readLine()!.split(separator: "X").map{ calculateArithmetic(of: $0.count) }.reduce(0, +))
+}
+
+
 
