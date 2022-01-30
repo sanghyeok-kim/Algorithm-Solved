@@ -98,20 +98,6 @@ class CircularLinkedList {
         
         removeByK(startNode: current, by: K)
     }
-    
-    func showAll() {
-        if isEmpty() {
-            print("|Empty List (tail)|")
-            return
-        }
-        
-        var current = tail?.next
-        for i in 0..<size - 1 {
-            print("|\(current?.index)| →", terminator: " ")
-            current = current?.next
-        }
-        print("|\(current?.index) (tail)|")
-    }
 }
 
 let input = readLine()!.components(separatedBy: " ")
@@ -127,9 +113,7 @@ func solution(_ N: Int, _ K: Int) {
     }
 
     CLL.removeByK(startNode: CLL.tail, by: K)
-    var resultStr = CLL.resultArray
-    resultStr.map{ String($0) }.joined(separator: ", ")
-
+    let resultStr = CLL.resultArray
     var result = "<"
     for i in 0..<resultStr.count {
         if i == resultStr.count - 1 {
